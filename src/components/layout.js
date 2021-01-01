@@ -31,6 +31,7 @@ const Layout = () => {
 
   return (
     <div className='container'>
+      <img width='150' height='150' src='/images/youtube.svg' alt='Logo' />
       <h1>Search for a video on Youtube</h1>
       <SearchForm handleFormSubmit={handleSubmit} />
       <div className='grid-column'>
