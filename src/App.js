@@ -1,11 +1,11 @@
 import './App.css';
-import SearchForm from './components/searchForm'
+import Layout from './components/layout'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchForm />
+        <Layout />
       </header>
     </div>
   );
