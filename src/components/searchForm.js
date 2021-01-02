@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import SpeechToText from 'speech-to-text'
 import { Voices } from '../svg/Voice'
 
@@ -23,7 +23,8 @@ const SearchForm = (props) => {
   }
 
   const onAnythingSaid = (text) => {
-    setKeyWord(text)
+    console.log(text)
+    // setKeyWord(text)
   }
 
   const onEndEvent = () => {
@@ -33,7 +34,7 @@ const SearchForm = (props) => {
   }
 
   const onFinalised = (text) => {
-    console.log(text)
+    setKeyWord(text)
   }
 
   const startListening = () => {

@@ -1,4 +1,9 @@
+import { useState } from 'react'
+import { convertAudio } from '../../helpers/convertAudio'
+
 const VideoDetail = ({ video }) => {
+  const [downloaded, setDownloaded] = useState()
+
   if (!video) {
     return (
       <div>
@@ -22,10 +27,23 @@ const VideoDetail = ({ video }) => {
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
 
+
+  const handleConvertAudio = async (e) => {
+    e.preventDefault()
+    const result = await convertAudio(video.id.videoId)
+    if (result) {
+      setDownloaded(true)
+    }
+  }
+
   return (
     <div className='video-detail'>
       <div className='embed'>
         <iframe src={videoSrc} allowFullScreen title='Video player' />
+      </div>
+      <div className='button-action'>
+        <button onClick={handleConvertAudio}>Convert audio MP3</button>
+        <span>{ downloaded ? 'Download success' : '' }</span>
       </div>
       <div className='segment'>
         <h4 className='header'>{video.snippet.title}</h4>

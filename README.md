@@ -1,6 +1,6 @@
 # Search for a video on Youtube and convert to audio MP3
 
-This project just demo how to search for a video on youtube by text and voice and convert them to audio
+This project just demo how to search for a video on youtube by text or voice and convert them to audio MP3
 
 ## Available Scripts
 
